@@ -72,7 +72,7 @@
               <img 
                 src="../assets/images/amresh.webp" 
                 alt="Founder" 
-                class="w-full xl:h-[530px] lg:h-[430px] lg:ml-12 md:px-10 lg:px-0"
+                class="w-full xl:h-[530px] lg:h-[430px] lg:ml-12 md:px-10 lg:px-0 aos-init aos-animate"
               >
             </div>
           </div>
