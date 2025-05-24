@@ -28,7 +28,7 @@
             <!-- Carousel Controls -->
             <button 
               @click="prevSlide"
-              class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
+              class="absolute left-4 top-1/2  transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
             >
               &#8249;
             </button>
@@ -109,7 +109,7 @@
             <h2 class="font-extrabold md:text-[55px] text-[45px] tracking-[12px] text-blue-900 pt-8">
               WHY
             </h2>
-            <p class="font-bold text-blue-900 pb-8 text-lg tracking-widest">
+            <p class="font-bold text-[#0C1D39] pb-8 text-lg tracking-widest">
               JOIN HANDS
             </p>
             <div class="md:text-[18px] lg:w-[365px] md:px-32 lg:px-0 text-[18px] font-serif text-blue-900 tracking-wide">
@@ -167,7 +167,7 @@
       </section>
 
       <!-- Quote Section -->
-      <section class="md:h-[480px] w-full py-10 justify-center flex items-center px-6 text-center bg-blue-900 text-white">
+      <section class="md:h-[480px] w-full py-10 justify-center flex items-center px-6 text-center bg-[#0C1D39] text-white">
         <div>
           <p class="md:text-[38px] text-[29px] font-thin tracking-wider">
             A little guidance goes a long way...
@@ -202,7 +202,6 @@
 import { ref, reactive, onMounted, onBeforeUnmount } from 'vue'
 import image1 from '../assets/images/image1.jpg'
 import image2 from '../assets/images/image2.jpg'
-import Navbar from '../pages/header.vue'
 
 // Component name (not required in <script setup>, only useful in options API or defineOptions)
 const currentSlide = ref(0)
@@ -241,9 +240,7 @@ const goToSlide = (index) => {
   currentSlide.value = index
 }
 
-const toggleMobileMenu = () => {
-  mobileMenuOpen.value = !mobileMenuOpen.value
-}
+
 
 const handleScroll = () => {
   showScrollToTop.value = window.pageYOffset > 300
@@ -256,13 +253,7 @@ const scrollToTop = () => {
   })
 }
 
-const submitNewsletter = () => {
-  if (email.value) {
-    console.log('Newsletter subscription:', email.value)
-    alert('Thank you for subscribing to our newsletter!')
-    email.value = ''
-  }
-}
+
 
 onMounted(() => {
   startCarousel()
@@ -286,18 +277,7 @@ onBeforeUnmount(() => {
 }
 
 /* Mobile menu styles if needed */
-@media (max-width: 1023px) {
-  .mobile-menu {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background: white;
-    z-index: 2000;
-    padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-}
+
 
 /* Smooth transitions */
 .transition-all {
