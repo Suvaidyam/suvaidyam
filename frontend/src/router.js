@@ -29,10 +29,15 @@ const routes = [
     path: '/contact',
     component: () => import('@/pages/contact.vue'),
   },
-   {
-    name: 'involved',
-    path: '/involved',
-    component: () => import('@/pages/involved.vue'),
+  {
+   name: 'involved',
+   path: '/involved',
+   component: () => import('@/pages/involved.vue'),
+  },
+  {
+   name: 'Register',
+   path: '/Register',
+   component: () => import('@/pages/Register.vue'),
   },
 ]
 
