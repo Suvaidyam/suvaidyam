@@ -2,7 +2,7 @@ import frappe
 from frappe import _
 
 @frappe.whitelist(allow_guest=True)
-def register_student(student_name, email, mobile, password, confirm_password, aadhar_no):
+def register_student(student_name, email, mobile, password, confirm_password, address):
     try:
         if password != confirm_password:
             return {"error": "Passwords do not match."}
@@ -12,7 +12,7 @@ def register_student(student_name, email, mobile, password, confirm_password, aa
         user.student_email_id= email
         user.student_mobile_number= mobile
         user.custom_password= password
-        user.custom_aadhar_no= aadhar_no
+        user.custom_address= address
 
         user.insert(ignore_permissions=True, ignore_mandatory=True)
         frappe.db.commit()
