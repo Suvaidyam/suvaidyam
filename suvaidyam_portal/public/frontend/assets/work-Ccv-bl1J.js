@@ -1,0 +1,1 @@
+import{_ as t,c as a,b as e,i as o}from"./index-CKmELapP.js";const r="/assets/suvaidyam_portal/frontend/assets/map-B2YFRjMX.webp",c={},n={class:"mt-12"};function _(i,s){return o(),a("div",n,s[0]||(s[0]=[e("div",{class:"flex justify-center"},[e("img",{src:r,alt:"Map"})],-1)]))}const f=t(c,[["render",_]]);export{f as default};

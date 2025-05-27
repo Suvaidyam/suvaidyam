@@ -5,6 +5,12 @@ import router from './router'
 import App from './App.vue'
 import call from './data/call.js'
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+AOS.init()
+
+
 import {
   Button,
   Card,
@@ -27,3 +33,4 @@ app.component('Input', Input)
 app.provide('call', call)
 
 app.mount('#app')
+

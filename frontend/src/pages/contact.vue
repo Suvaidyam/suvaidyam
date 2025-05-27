@@ -148,7 +148,7 @@ const validateForm = () => {
   errors.fullName = !form.fullName.trim()
   errors.email = !form.email.trim() || !isValidEmail(form.email)
   errors.message = !form.message.trim()
-  
+
   return !Object.values(errors).some(error => error)
 }
 
@@ -161,20 +161,20 @@ const handleSubmit = async () => {
   if (!validateForm()) {
     return
   }
-  
+
   isSubmitting.value = true
-  
+
   try {
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000))
-    
+
     // Store form data before reset for emit
     const formData = {
       fullName: form.fullName,
       email: form.email,
       message: form.message
     }
-    
+
     // Reset form and show success message
     Object.assign(form, {
       fullName: '',
@@ -182,15 +182,15 @@ const handleSubmit = async () => {
       message: ''
     })
     showSuccess.value = true
-    
+
     // Hide success message after 3 seconds
     setTimeout(() => {
       showSuccess.value = false
     }, 3000)
-    
+
     // Emit event to parent component
     emit('form-submitted', formData)
-    
+
   } catch (error) {
     console.error('Error submitting form:', error)
   } finally {

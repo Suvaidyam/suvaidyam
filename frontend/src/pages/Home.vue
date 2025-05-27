@@ -8,37 +8,37 @@
       <section class="w-full mt-20">
         <div class="carousel-container relative">
           <div class="relative w-full overflow-hidden">
-            <div 
+            <div
               class="flex transition-transform duration-1000 ease-in-out"
               :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
             >
-              <div 
-                v-for="(slide, index) in slides" 
+              <div
+                v-for="(slide, index) in slides"
                 :key="index"
                 class="w-full flex-shrink-0"
               >
-                <img 
-                  :src="slide.image" 
-                  :alt="slide.alt" 
+                <img
+                  :src="slide.image"
+                  :alt="slide.alt"
                   class="w-full h-[200px] md:h-[460px] lg:h-[600px] object-cover"
                 >
               </div>
             </div>
-            
+
             <!-- Carousel Controls -->
-            <button 
+            <button
               @click="prevSlide"
               class="absolute left-4 top-1/2  transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
             >
               &#8249;
             </button>
-            <button 
+            <button
               @click="nextSlide"
               class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
             >
               &#8250;
             </button>
-            
+
             <!-- Carousel Dots -->
             <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
               <button
@@ -82,7 +82,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="md:w-1/2 flex">
           <div class="lg:w-[410px] md:text-[17.5px] text-[20px] font-serif text-black tracking-wide">
             <p>Indian villages have the potential to serve as centres of advanced technology and innovation. Our primary objective is to empower rural India by revolutionising the way we teach and upskill its youth.</p>
@@ -98,9 +98,9 @@
       <!-- Image and Why Section -->
       <section class="w-full block lg:flex md:gap-10 lg:gap-6">
         <div class="lg:w-[50%]">
-          <img 
-            src="../assets/images/members.jpeg" 
-            class="md:h-[580px] w-full object-cover" 
+          <img
+            src="../assets/images/members.jpeg"
+            class="md:h-[580px] w-full object-cover"
             alt="Group of people"
           >
         </div>
@@ -147,18 +147,18 @@
         <div class="w-full h-full flex gap-8 md:gap-10 max-w-[850px] flex-wrap items-center justify-center">
           <div class="logo">
             <a href="https://dhwaniris.com" target="_blank" rel="noopener noreferrer">
-              <img 
-                src="../assets/images/dhwanilogo.png" 
-                class="w-full h-full" 
+              <img
+                src="../assets/images/dhwanilogo.png"
+                class="w-full h-full"
                 alt="Dhwani RIS"
               >
             </a>
           </div>
           <div class="logo">
             <a href="https://www.capitalaircom.com" target="_blank" rel="noopener noreferrer">
-              <img 
-                src="../assets/images/capital.jpeg" 
-                class="capital w-full h-full"  
+              <img
+                src="../assets/images/capital.jpeg"
+                class="capital w-full h-full"
                 alt="Capital Air"
               >
             </a>
@@ -186,15 +186,6 @@
         </div>
       </section>
     </main>
-    <button 
-      v-show="showScrollToTop"
-      @click="scrollToTop"
-      class="w-10 cursor-pointer flex justify-center items-center text-white text-xl duration-500 h-10 z-50 bg-sky-600 rounded-full fixed right-5 bottom-10 hover:bg-sky-700"
-    >
-      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="w-4 h-4">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.854 7l-5-5h-.707l-5 5 .707.707L8 3.561V14h1V3.56l4.146 4.147.708-.707z"></path>
-      </svg>
-    </button>
   </div>
 </template>
 
@@ -203,9 +194,9 @@ import { ref, reactive, onMounted, onBeforeUnmount } from 'vue'
 import image1 from '../assets/images/image1.jpg'
 import image2 from '../assets/images/image2.jpg'
 
+
 // Component name (not required in <script setup>, only useful in options API or defineOptions)
 const currentSlide = ref(0)
-const showScrollToTop = ref(false)
 const email = ref('')
 const mobileMenuOpen = ref(false)
 let carouselInterval = null
@@ -240,31 +231,14 @@ const goToSlide = (index) => {
   currentSlide.value = index
 }
 
-
-
-const handleScroll = () => {
-  showScrollToTop.value = window.pageYOffset > 300
-}
-
-const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  })
-}
-
-
-
 onMounted(() => {
   startCarousel()
-  window.addEventListener('scroll', handleScroll)
 })
 
 onBeforeUnmount(() => {
   if (carouselInterval) {
     clearInterval(carouselInterval)
   }
-  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
