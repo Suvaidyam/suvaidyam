@@ -186,15 +186,6 @@
         </div>
       </section>
     </main>
-    <button 
-      v-show="showScrollToTop"
-      @click="scrollToTop"
-      class="w-10 cursor-pointer flex justify-center items-center text-white text-xl duration-500 h-10 z-50 bg-sky-600 rounded-full fixed right-5 bottom-10 hover:bg-sky-700"
-    >
-      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="w-4 h-4">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.854 7l-5-5h-.707l-5 5 .707.707L8 3.561V14h1V3.56l4.146 4.147.708-.707z"></path>
-      </svg>
-    </button>
   </div>
 </template>
 
