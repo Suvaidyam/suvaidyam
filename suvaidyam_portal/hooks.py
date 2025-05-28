@@ -132,13 +132,12 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+    "Course": {
+        "after_insert": "suvaidyam_portal.api.sync_course_to_lms"
+    }
+}
+
 
 # Scheduled Tasks
 # ---------------
