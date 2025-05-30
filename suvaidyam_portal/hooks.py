@@ -238,3 +238,7 @@ doc_events = {
 
 
 website_route_rules = [{'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'},]
+
+override_doctype_class = {
+    "Course Lesson": "suvaidyam_portal.overrides.course_lesson.CourseLesson"
+}
