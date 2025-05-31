@@ -126,8 +126,12 @@
 
 <script setup>
 import { ref, reactive, watch } from 'vue'
+import { inject } from 'vue'
+
 
 const emit = defineEmits(['form-submitted'])
+const call = inject('call')
+
 
 const form = reactive({
   fullName: '',
@@ -169,11 +173,14 @@ const handleSubmit = async () => {
     await new Promise(resolve => setTimeout(resolve, 1000))
     
     // Store form data before reset for emit
-    const formData = {
+    const formData = await call('suvaidyam_portal.contact.submit_question', {
       fullName: form.fullName,
       email: form.email,
       message: form.message
     }
+    );
+    console.log('Form submitted:', formData);
+    
     
     // Reset form and show success message
     Object.assign(form, {
