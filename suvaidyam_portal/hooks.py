@@ -242,3 +242,5 @@ website_route_rules = [{'from_route': '/frontend/<path:app_path>', 'to_route': '
 override_doctype_class = {
     "Course Lesson": "suvaidyam_portal.overrides.course_lesson.CourseLesson"
 }
+
+# notification_config = "suvaidyam_portal.notifications.get_notification_config"
